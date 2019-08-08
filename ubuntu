@@ -1,0 +1,48 @@
+Installing Vagrant with libvirt :
+
+sudo apt-get update
+
+#Install KVM
+sudo apt-get install qemu qemu-kvm libvirt-bin ebtables dnsmasq-base virt-top  libguestfs-tools virtinst bridge-utils
+sudo apt-get install libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
+
+sudo modprobe vhost_net
+sudo lsmod | grep vhost
+echo "vhost_net" | sudo tee -a /etc/modules
+
+#Install vagrant
+VER="2.2.5" #latest version
+wget https://releases.hashicorp.com/vagrant/${VER}/vagrant_${VER}_x86_64.deb
+#Or download from here : https://www.vagrantup.com/downloads.html
+sudo dpkg -i vagrant_${VER}_x86_64.deb
+
+#After installation, check version of the vagrant
+vagrant --version
+
+#Install libvirt plugin
+sudo vagrant plugin install vagrant-libvirt
+
+#Run Vagrant
+sudo vagrant up --provider=libvirt
+
+#Helpful vagrant commands
+vagrant up
+vagrant ssh
+vagrant halt
+vagrant suspend
+vagrant destroy
+
+#Uninstalling Vagrant
+
+#To unistall only vagrant
+sudo apt-get remove vagrant
+
+#To unistall vagrant and its dependencies
+sudo apt-get remove --auto-remove vagrant
+
+#Using dpkg package manager
+sudo dpkg -r vagrant
+
+#Remove user data
+rm -r ~/.vagrant.d
+
