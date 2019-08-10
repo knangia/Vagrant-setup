@@ -1,0 +1,20 @@
+#Download libvirtd.sh
+sudo wget https://github.com/AntonioMeireles/ClearLinux-packer/blob/master/extras/clearlinux/setup/libvirtd.sh
+#Run the script
+./libvirtd.sh
+
+#Download vagrant.sh
+sudo wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/vagrant.sh
+#Run the script
+./vagrant.sh
+
+#If you get error while executing the above commands, try copy pasting the scripts directly from the link provided and run them.
+
+#To check if vagrant installed successfully
+vagrant --version
+
+#Vagrant up to bring up your VMs
+vagrant up --provider=libvirt
+
+#SSH into your VMs
+vagrant shh <machine-name>
