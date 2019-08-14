@@ -1,9 +1,9 @@
-# Detailed Vagrant installation steps
+# Detailed Vagrant installation steps for different distros
 
-# [Ubuntu](#install-vagrant-on-ubuntu)
-# [Clear Linux](#install-vagrant-on-clear-linux)
+## [Ubuntu](#install-vagrant-on-ubuntu)
+## [Clear Linux](#install-vagrant-on-clear-linux)
 
-## Install vagrant on Ubuntu
+### Install vagrant on Ubuntu
 
 On Ubuntu Bionic, run these commands
 Install dependencies and prepare system
@@ -32,15 +32,20 @@ Note, vagrant installation steps were derived from:
 * https://computingforgeeks.com/install-latest-vagrant-on-ubuntu-18-04-debian-9-kali-linux/
 * https://github.com/vagrant-libvirt/vagrant-libvirt/blob/master/README.md
 
-## Install vagrant on Clear Linux
+### Install vagrant on Clear Linux
 
 On Clear Linux, run these commands
 ```bash
 sudo wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/libvirtd.sh
+
 chmod +x libvirtd.sh
+
 ./libvirtd.sh
+
 sudo wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/vagrant.sh
+
 chmod +x vagrant.sh
+
 ./vagrant.sh
 ```
 Check if vagrant is installed successfully
