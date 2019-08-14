@@ -1,10 +1,12 @@
 #Download libvirtd.sh
-sudo wget https://github.com/AntonioMeireles/ClearLinux-packer/blob/master/extras/clearlinux/setup/libvirtd.sh
+sudo wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/libvirtd.sh
+chmod +x libvirtd.sh
 #Run the script
 ./libvirtd.sh
 
 #Download vagrant.sh
 sudo wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/vagrant.sh
+chmod +x vagrant.sh
 #Run the script
 ./vagrant.sh
 
