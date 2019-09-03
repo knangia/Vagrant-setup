@@ -34,11 +34,11 @@ Note, vagrant installation steps were derived from:
 
 ## Install vagrant on Clear Linux
 
-Install unzip bundle using the following command, sincev[vagrant.sh](https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/vagrant.sh) requires it.
+Install unzip bundle using the following command, since [vagrant.sh](https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/vagrant.sh) requires it.
 ```bash
 sudo swupd bundle-add unzip
 ```
-Install rsync bundle using the following command, since [`Vagrantfile`](Vagrantfile) requires it.
+Install rsync bundle using the following command, since [`Vagrantfile`](https://github.com/clearlinux/cloud-native-setup/blob/master/clr-k8s-examples/Vagrantfile) requires it.
 ```bash
 sudo swupd bundle-add rsync
 ```
