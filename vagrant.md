@@ -42,7 +42,7 @@ Make sure all the prerequisite packages are installed
 ```bash
 sudo swupd bundle-add unzip rsync wget kvm-host
 ```
-Now, run the following commands
+Now, run the following scripts
 ```bash
 wget https://raw.githubusercontent.com/AntonioMeireles/ClearLinux-packer/master/extras/clearlinux/setup/libvirtd.sh
 chmod +x libvirtd.sh
