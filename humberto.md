@@ -94,7 +94,7 @@ local KVM_CMD="qemu-system-x86_64                                               
             -device virtio-balloon-pci,id=balloon0 -overcommit mem-lock=off -msg timestamp=on \
 ```
 
-##Cleanup
+## Cleanup
 Do the following for a fresh start before running the script from scratch
 ```shell script
 sudo rm -rf /tmp/
