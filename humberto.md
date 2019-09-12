@@ -2,10 +2,10 @@
 
 Run everything as root
 
-Add `clear` user to `kvm` group
+Add your user to `kvm` group
 
 ```shell script
-sudo usermod -a -G kvm clear
+sudo usermod -a -G kvm $USER
 ```
 
 Chmod /dev/kvm to workaround [bug](https://bugzilla.redhat.com/show_bug.cgi?id=1479558)
@@ -15,7 +15,7 @@ sudo chmod 666 /dev/kvm
 sudo sed -i s/0660/0666/g /lib/udev/rules.d/80-kvm.rules
 ```
 
-Install sysadmin-basic bundle for `tput` binary
+Install following bundles
 
 ```shell script
 sudo swupd bundle-add sysadmin-basic # tput
@@ -40,11 +40,13 @@ ip a | grep UP
 sudo vi configs/host/clear/50-local-external-nic.network
 
 #Update MACAddress for the active interface in 50-external-bridge.network
-sudo vi /etc/systemd/network/50-external-bridge.network
+sudo vi configs/host/clear/50-external-bridge.network
+
 [Link]
-MACAddress=
+MACAddress=<your active interface's MAC>
 
 #Remove 50-dhcp.network
+rm configs/host/clear/50-dhcp.network
 ```
 
 Copy network scripts
@@ -79,8 +81,8 @@ cd percoso
 EXTERNAL_HOST_NETWORK=1
 ./scripts/tests/setup_k8s-cluster.sh
 ```
-
 I am running inside the Intel Proxy.
+
 
 To reduce the memory for VMs, because of lack of resources on host
 ```shell script
