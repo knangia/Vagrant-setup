@@ -76,10 +76,11 @@ MACAddress=b8:ae:ed:7e:ef:d3
 ClientIdentifier=mac
 DUIDType=link-layer
 
+```
 
-No 50-dhcp file required
-
-ip a    <ponte should be UP and have ip assigned, the interface should give up its ip>
+```shell script
+# No 50-dhcp file required
+ip a    # ponte should be UP and have ip assigned, the interface should give up its ip
 ```
 
 Copy network scripts
