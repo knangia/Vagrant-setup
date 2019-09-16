@@ -49,6 +49,39 @@ MACAddress=<your active interface's MAC>
 rm configs/host/clear/50-dhcp.network
 ```
 
+Example of network scripts
+```shell script
+vi 50-local-external-nic.network
+[Match]
+Name=enp0s25
+[Network]
+Bridge=ponte
+
+vi 50-external-bridge.netdev
+[NetDev]
+Name=ponte
+Kind=bridge
+
+vi 50-external-bridge.network
+[Match]
+Name=ponte
+
+[Network]
+DHCP=yes
+
+[Link]
+MACAddress=b8:ae:ed:7e:ef:d3
+
+[DHCP]
+ClientIdentifier=mac
+DUIDType=link-layer
+
+
+No 50-dhcp file required
+
+ip a    <ponte should be UP and have ip assigned, the interface should give up its ip>
+```
+
 Copy network scripts
 
 ```shell script
